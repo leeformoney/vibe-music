@@ -108,14 +108,14 @@
 
 ## 项目截图 📷
 
-![登录界面](https://gitee.com/alex-leesun/vibe-music-screenshot/raw/main/admin/admin_login.png)
-![系统首页界面](https://gitee.com/alex-leesun/vibe-music-screenshot/raw/main/admin/admin_home.png)
-![用户管理界面](https://gitee.com/alex-leesun/vibe-music-screenshot/raw/main/admin/admin_user_management.png)
-![歌手管理界面](https://gitee.com/alex-leesun/vibe-music-screenshot/raw/main/admin/admin_artist_management.png)
-![歌曲管理界面](https://gitee.com/alex-leesun/vibe-music-screenshot/raw/main/admin/admin_song_management.png)
-![歌单管理界面](https://gitee.com/alex-leesun/vibe-music-screenshot/raw/main/admin/admin_playlist_management.png)
-![反馈管理界面](https://gitee.com/alex-leesun/vibe-music-screenshot/raw/main/admin/admin_feedback_management.png)
-![轮播图管理界面](https://gitee.com/alex-leesun/vibe-music-screenshot/raw/main/admin/admin_banner_management.png)
+![登录界面](https://github.com/Alex-LiSun/vibe-music-admin/blob/main/img/admin_login.png)
+![系统首页界面](https://github.com/Alex-LiSun/vibe-music-admin/blob/main/img/admin_home.png)
+![用户管理界面](https://github.com/Alex-LiSun/vibe-music-admin/blob/main/img/admin_user_management.png)
+![歌手管理界面](https://github.com/Alex-LiSun/vibe-music-admin/blob/main/img/admin_artist_management.png)
+![歌曲管理界面](https://github.com/Alex-LiSun/vibe-music-admin/blob/main/img/admin_song_management.png)
+![歌单管理界面](https://github.com/Alex-LiSun/vibe-music-admin/blob/main/img/admin_playlist_management.png)
+![反馈管理界面](https://github.com/Alex-LiSun/vibe-music-admin/blob/main/img/admin_feedback_management.png)
+![轮播图管理界面](https://github.com/Alex-LiSun/vibe-music-admin/blob/main/img/admin_banner_management.png)
 
 ## 项目后台接口 🧩
 
