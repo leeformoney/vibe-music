@@ -106,6 +106,10 @@
 - `pnpm format`: 使用 Prettier 格式化代码。
 - `pnpm type-check`: 使用 vue-tsc 进行 TypeScript 类型检查。
 
+## 项目演示 📺
+
+视频地址：[https://www.bilibili.com/video/BV1tKJ8z8E6z/]
+
 ## 项目截图 📷
 
 ![登录界面](https://github.com/Alex-LiSun/vibe-music-admin/blob/main/img/admin_login.png)
