@@ -422,3 +422,141 @@ export const deleteBanners = (ids: Array<number>) => {
   });
 };
 
+/** 分类管理-获取分类列表 */
+export const getCategoryList = (data: object) => {
+  const userData = getToken();
+  return http.request<ResultTable>("post", "/admin/getAllCategories", {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: userData.accessToken
+    },
+    data
+  });
+};
+
+/** 分类管理-新增分类 */
+export const addCategory = (data: object) => {
+  const userData = getToken();
+  return http.request<Result>("post", "/admin/addCategory", {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: userData.accessToken
+    },
+    data
+  });
+};
+
+/** 分类管理-编辑分类 */
+export const updateCategory = (data: object) => {
+  const userData = getToken();
+  return http.request<Result>("put", "/admin/updateCategory", {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: userData.accessToken
+    },
+    data
+  });
+};
+
+/** 分类管理-删除分类 */
+export const deleteCategory = (id: number) => {
+  const userData = getToken();
+  return http.request<Result>("delete", `/admin/deleteCategory/${id}`, {
+    headers: { Authorization: userData.accessToken }
+  });
+};
+
+/** 分类管理-批量删除分类 */
+export const deleteCategories = (ids: Array<number>) => {
+  const userData = getToken();
+  return http.request<Result>("delete", "/admin/deleteCategories", {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: userData.accessToken
+    },
+    data: ids
+  });
+};
+
+/** 音频管理-更新音频文件 */
+export const updateAudioFile = (id: number, data: object) => {
+  const userData = getToken();
+  return http.request<Result>("patch", `/admin/updateAudioFile/${id}`, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+      Authorization: userData.accessToken
+    },
+    data,
+    responseType: "json"
+  });
+};
+
+/** 音频管理-获取音频列表 */
+export const getAudioList = (data: object) => {
+  const userData = getToken();
+  return http.request<ResultTable>("post", "/admin/getAudios", {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: userData.accessToken
+    },
+    data
+  });
+};
+
+/** 音频管理-新增音频 */
+export const addAudio = (data: object) => {
+  const userData = getToken();
+  return http.request<Result>("post", "/admin/addAudio", {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: userData.accessToken
+    },
+    data
+  });
+};
+
+/** 音频管理-编辑音频 */
+export const updateAudio = (data: object) => {
+  const userData = getToken();
+  return http.request<Result>("put", "/admin/updateAudio", {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: userData.accessToken
+    },
+    data
+  });
+};
+
+/** 音频管理-更新封面 */
+export const updateAudioCover = (id: number, data: object) => {
+  const userData = getToken();
+  return http.request<Result>("patch", `/admin/updateAudioCover/${id}`, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+      Authorization: userData.accessToken
+    },
+    data,
+    responseType: "json"
+  });
+};
+
+/** 音频管理-删除音频 */
+export const deleteAudio = (id: number) => {
+  const userData = getToken();
+  return http.request<Result>("delete", `/admin/deleteAudio/${id}`, {
+    headers: { Authorization: userData.accessToken }
+  });
+};
+
+/** 音频管理-批量删除音频 */
+export const deleteAudios = (ids: Array<number>) => {
+  const userData = getToken();
+  return http.request<Result>("delete", "/admin/deleteAudios", {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: userData.accessToken
+    },
+    data: ids
+  });
+};
+

@@ -1,0 +1,125 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Next.js 开发规范
+
+## 项目结构和路由
+- 使用 App Router（app/ 目录）而不是 Pages Router
+- 在路由目录中使用 `page.tsx`、`layout.tsx`、`loading.tsx`、`error.tsx` 等特殊文件
+- 目录名使用 kebab-case（例如：`app/user-profile/`）
+- 组件文件使用 PascalCase（例如：`UserProfile.tsx`）
+- 使用文件系统路由，合理组织嵌套路由
+
+## 服务器组件和客户端组件
+- 优先使用 React Server Components (RSC)
+- 仅在需要交互性时标记 `'use client'`
+- 客户端组件必须在文件顶部明确标记 `'use client'`
+- 为交互元素创建小型客户端组件包装器
+- 使用 Suspense 和 fallback UI 包装客户端组件
+
+## 数据获取策略
+- 使用服务器组件进行数据获取
+- 利用 fetch API 的内置缓存机制
+- 合理使用静态生成 (SSG) 和服务器端渲染 (SSR)
+- 使用 React Server Actions 处理表单提交
+- 避免不必要的 `useState` 和 `useEffect`
+
+## 状态管理
+- 使用 URL 搜索参数实现可共享状态
+- 使用 `nuqs` 库管理 URL 搜索参数状态
+- 保持服务器状态和客户端状态分离
+- 仅在必要时使用全局状态管理
+- 利用 React Context 进行组件间状态共享
+
+## 性能优化
+- 使用 Next.js Image 组件进行图片优化
+- 实现代码分割和懒加载
+- 使用 dynamic imports 进行组件级代码分割
+- 合理配置缓存策略
+- 使用 Bundle Analyzer 分析包大小
+- 实现 Progressive Web App (PWA) 特性
+
+## API 路由和后端集成
+- 使用 Route Handlers（app/api/ 目录）处理 API 请求
+- 实现适当的错误处理和验证
+- 使用中间件进行认证和授权
+- 合理使用环境变量管理配置
+- 实现 API 请求的类型安全
+
+## 样式和UI
+- 使用 Tailwind CSS 进行样式管理
+- 实现响应式设计
+- 使用 CSS 模块或 styled-components
+- 保持设计系统的一致性
+- 使用 Next.js 内置的样式优化
+
+## 类型安全
+- 全面使用 TypeScript
+- 为 API 响应定义严格的类型
+- 使用 Zod 进行运行时类型验证
+- 实现端到端的类型安全
+- 合理使用泛型和工具类型
+
+## 测试策略
+- 使用 Jest 和 React Testing Library
+- 编写单元测试和集成测试
+- 测试 Server Actions 和 API 路由
+- 使用 Playwright 进行端到端测试
+- 实现合适的测试覆盖率
+
+## 部署和DevOps
+- 使用 Vercel 进行部署优化
+- 配置适当的环境变量
+- 实现 CI/CD 流程
+- 设置监控和错误追踪
+- 优化构建时间和包大小
+
+## 安全实践
+- 实现 CSRF 保护
+- 使用适当的认证策略
+- 配置安全的 HTTP headers
+- 实施内容安全策略 (CSP)
+- 验证和清理用户输入
+
+## 代码组织
+- 优先使用命名导出而非默认导出
+- 保持组件职责单一
+- 使用 hooks 抽象复杂逻辑
+- 实现清晰的文件夹结构
+- 为复杂功能编写文档
+
+## 项目结构示例
+```
+app/
+├── (auth)/
+│   ├── login/
+│   │   └── page.tsx
+│   └── layout.tsx
+├── dashboard/
+│   ├── page.tsx
+│   ├── loading.tsx
+│   └── error.tsx
+├── api/
+│   └── users/
+│       └── route.ts
+├── globals.css
+└── layout.tsx
+
+components/
+├── ui/
+├── forms/
+└── common/
+
+lib/
+├── utils.ts
+├── validations.ts
+└── db.ts
+```
+
+## 开发工具配置
+- 配置 ESLint 和 Prettier
+- 使用 TypeScript 严格模式
+- 配置 Next.js 分析工具
+- 使用 Git hooks 进行代码质量检查

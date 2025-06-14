@@ -1,0 +1,117 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Java 开发规范
+
+## 代码风格和结构
+- 编写干净、高效且文档齐全的Java代码
+- 遵循面向对象设计原则（SOLID）
+- 使用符合驼峰命名法的描述性方法和变量名
+- 保持高内聚和低耦合的代码结构
+- 适当使用设计模式解决常见问题
+
+## Spring Boot 最佳实践
+- 使用Spring Boot启动器进行快速项目设置和依赖管理
+- 正确实现注解（@SpringBootApplication、@RestController、@Service）
+- 有效利用Spring Boot的自动配置功能
+- 使用@ControllerAdvice和@ExceptionHandler实现统一异常处理
+- 结构化应用程序：Controller、Service、Repository、Model、Configuration
+
+## 命名约定
+- 类名使用PascalCase（如：UserController、OrderService）
+- 方法和变量名使用camelCase（如：findUserById、isOrderValid）
+- 常量使用UPPER_CASE（如：MAX_RETRY_ATTEMPTS、DEFAULT_PAGE_SIZE）
+- 包名使用小写字母和点分隔符
+- 接口名通常使用形容词或名词
+
+## Java版本特性使用
+- 优先使用Java 17或更高版本特性
+- 使用记录类（Record）简化数据类
+- 利用密封类（Sealed Class）控制继承
+- 使用模式匹配和instanceof改进
+- 合理使用var关键字提高可读性
+
+## 配置管理
+- 使用application.properties或application.yml进行配置
+- 使用Spring配置文件实现不同环境的配置
+- 使用@ConfigurationProperties实现类型安全的配置属性
+- 敏感信息使用环境变量或配置中心
+
+## 依赖注入和IoC
+- 优先使用构造函数注入而非字段注入
+- 利用Spring的IoC容器管理Bean生命周期
+- 避免循环依赖
+- 合理使用@Autowired、@Qualifier等注解
+
+## 数据访问层
+- 使用Spring Data JPA进行数据库操作
+- 实现适当的实体关系和级联操作
+- 使用Repository模式封装数据访问逻辑
+- 合理使用查询方法命名约定
+- 复杂查询使用@Query注解或Criteria API
+
+## RESTful API设计
+- 遵循RESTful API设计原则
+- 使用适当的HTTP方法（GET、POST、PUT、DELETE）
+- 合理设计URL路径和资源命名
+- 使用适当的HTTP状态码
+- 实现统一的响应格式
+
+## 异常处理
+- 创建自定义异常类继承适当的基类
+- 使用@ControllerAdvice实现全局异常处理
+- 提供有意义的错误信息和错误码
+- 记录异常信息用于调试和监控
+- 避免吞噬异常
+
+## 测试策略
+- 使用JUnit 5和Spring Boot Test编写测试
+- 实现单元测试、集成测试和端到端测试
+- 使用@MockBean和@Mock进行模拟测试
+- 使用@SpringBootTest进行集成测试
+- 使用@DataJpaTest测试Repository层
+- 保持高测试覆盖率
+
+## 性能优化
+- 使用Spring Cache抽象实现缓存策略
+- 使用@Async进行异步处理
+- 实现数据库连接池优化
+- 合理设计数据库索引
+- 使用分页查询避免一次性加载大量数据
+
+## 安全实践
+- 使用Spring Security进行身份验证和授权
+- 实现适当的密码编码（BCrypt）
+- 配置CORS策略
+- 实施输入验证和SQL注入防护
+- 使用HTTPS进行数据传输
+
+## 日志和监控
+- 使用SLF4J和Logback进行日志记录
+- 实现适当的日志级别（ERROR、WARN、INFO、DEBUG）
+- 使用Spring Boot Actuator进行应用监控
+- 配置日志文件轮转和归档策略
+- 实现分布式追踪（如使用Zipkin）
+
+## 项目结构示例
+```
+src/
+├── main/
+│   ├── java/
+│   │   └── com/example/project/
+│   │       ├── Application.java
+│   │       ├── controller/
+│   │       ├── service/
+│   │       ├── repository/
+│   │       ├── model/
+│   │       ├── dto/
+│   │       ├── config/
+│   │       └── exception/
+│   └── resources/
+│       ├── application.yml
+│       └── db/migration/
+└── test/
+    └── java/
+```
